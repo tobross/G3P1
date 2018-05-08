@@ -1,6 +1,5 @@
    // Initialize Firebase
    $(document).ready(function () {
-       console.log("whoo!");
        var config = {
            apiKey: "AIzaSyBeMkHv3bt0v0tXoc6UikMbHoZTtEMU-v0",
            authDomain: "g3p1-66142.firebaseapp.com",
@@ -24,9 +23,6 @@
            var targetUrl = queryURL;
 
            $.get(proxyUrl + targetUrl, function (response) {
-               console.log(response);
-               console.log(queryURL);
-               console.log(JSON.parse(response));
                var result = JSON.parse(response);
                var recipes = result.recipes;
 
