@@ -14,6 +14,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url("../images/succulent.jpg");
   }
 
   main {
@@ -59,4 +60,39 @@ body {
 
 #img1{
     width: 100px;
+main{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;   
+}
+
+.section,{
+    margin: 0 auto;
+    background-image: url("../images/succulent.jpg")!important;
+}
+.card {
+    width: 30%;
+    height: auto;
+    border: 2px solid #096da7;
+    float: left;
+    margin-left: 20px;
+    background: rgb(64, 74, 83);
+    height: 350px;
+}
+.recipePic {
+    width: 200px;
+    height: 200px;
+}
+.card-title {
+    font-size: 24px;
+    font-variant: small-caps;
+    color: #167e64 !important;
+    font-weight: bold !important;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000, 
+    1px 1px 0 #000;
+}
+form {
+    color: white;
 }
