@@ -20,14 +20,18 @@ $(document).ready(function() {
                       var event = res.events[i];
                       var eventTime = moment(event.start.local).format('M/D/YYYY h:mm A');
                       console.dir(event);
+                      //console.log(event.logo.url);
+                      if (event.logo) {
+                          var eventImage = "<img src='" + event.logo.url + "' alt='EventLogo'>";
+                      }
+                      else {var eventImage = "<img src='" + "assets/images/eventbrite-logo-dribble.gif'";
+                      }
                       s += "<div class='eventList'>";
                       s += "<h3><a href='" + event.url + "'>" + event.name.text + "</a></h3>";
                       s += "<p><b>Location: " + event.venue.address.address_1 + "</b><br/>";
                       s += "<b>Date/Time: " + eventTime + "</b></p>";
-                      //s += "<b>Category: " + event.category + "</b><br/>";
+                      s += "<b>Logo: " + eventImage + "</b><br/>";
                       s += "<p><b>is_free: " + event.is_free + "<b><br/>";
-                      
-                      //s += "<p>" + event.price + "</p>";
                       s += "</div>";
                   }
                   $events.html(s);
