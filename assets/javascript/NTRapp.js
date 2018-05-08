@@ -25,7 +25,7 @@
            $.get(proxyUrl + targetUrl, function (response) {
                var result = JSON.parse(response);
                var recipes = result.recipes;
-
+                console.log(result);
                for (i = 0; i < 6; i++) {
 
                    var image = "<img class='recipePic' src='" + recipes[i].image_url + "' alt='Recipe Image'>";
