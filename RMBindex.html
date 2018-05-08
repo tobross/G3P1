@@ -1,0 +1,29 @@
+<!-- Comment:  -->
+<!DOCTYPE html>
+<html lang='(en-us)'>
+<head>
+<meta charset='UTF-8'>
+<title>API-test</title>
+<link rel='stylesheet' type='text/css' href='assets/css/reset.css'>
+<link rel='stylesheet' type='text/css' href='assets/css/RMBstyle.css'>
+<!-- Added link to the jQuery Library -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="assets/javascript/RMBapp.js"></script>
+</head>
+<body>
+    <div class="container"></div>
+<h1>API Test for EventBrite</h1>
+<h2>We can select location, date, category, and free/paid</h2>
+<h2>Current assumptions: Any category, free-only, Location = "within 10 miles of 78613"</h2>
+<h2>Click one of the buttons to select the timeframe</h2>
+<!-- build buttons for "today" "tomorrow" "this weekend" -->
+<div id="instructions">
+<button time-frame = "today">Today</button>
+<button time-frame = "tomorrow">Tomorrow</button>
+<button time-frame = "this_weekend">This Weekend</button>
+</div>
+<!-- build a form for user to input desired zip code -->
+<div id="events"></div>
+</body>
+</html>
