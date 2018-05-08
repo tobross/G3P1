@@ -12,10 +12,58 @@
 //  var database = firebase.database();
 
 
-//  dropdown nav functionality
+
 $(document).ready(function(){
-  $(".dropdown-trigger").dropdown();
-  $('.parallax').parallax();
+
+
+  // $(".parallax").parallax();
+
+  //   $('.sidenav').sidenav();
+
+
+
+
+// Weather aPi
+
+var zip= "";
+
+var APIKey = "11d3ec545af75db253dcba87baa3df79";
+
+var queryURL= "https://api.openweathermap.org/data/2.5/weather?zip=78728,us&units=imperial&appid=11d3ec545af75db253dcba87baa3df79";
+
+
+
+"https://api.openweathermap.org/data/2.5/weather?" + "zip=" + "78728" + ",us&units=imperial" +"appid=" + APIKey;
+
+$.ajax({
+  url: queryURL,
+  method: "GET"
+})
+
+.then(function(response) {
+  console.log(queryURL);
+  console.log(response);
+
+  console.log("Current Temp: " + response.main.temp);
+
+var theWeather = response.main.temp
+
+
+if (response.main.temp >= "Clear") {
+
+console.log("I work");
+
+// img = '<img src ="../images/sun.png">';
+
+  };
+
+
+$(".info").text("Currently in " + response.name + ": " +  response.main.temp);
+
 });
+});
+
+
+
 
 

@@ -6,6 +6,10 @@ font-family: 'Unica One', cursive; */
 
 /* sticky footer */
 
+.parallax-container{
+    height: 250px;
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -14,6 +18,10 @@ body {
 
   main {
     flex: 1 0 auto;
+        /* margin-top: 10%;
+    margin-bottom: 10%; */
+    text-align: center;
+    background-image: url("assets/images/succulent.jpg")!important;
   }
 
 .nav-wrapper, footer{
@@ -26,16 +34,9 @@ body {
     font-family: 'Unica One', cursive;
 }
 
-.parallax-container, .parallax {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
 
-.parallax img { 
+
+.parallax-container { 
     width: 100%; 
 }
 
@@ -44,14 +45,18 @@ body {
     background-color: #f09819;
 }
 
-main{
-    margin-top: 10%;
-    margin-bottom: 10%;
-    text-align: center;
-   
-}
+
 
 .section,{
     margin: 0 auto;
-    background-image: url("assets/images/succulent.jpg")!important;
+    
+}
+
+.info{
+    font-family: 'Didact Gothic', sans-serif;
+  
+}
+
+#img1{
+    width: 100px;
 }
