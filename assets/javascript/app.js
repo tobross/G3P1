@@ -85,7 +85,7 @@ $(document).ready(function () {
     $("#recipeFinder").removeClass("hide");
 
     $(document).on("click", "#findRecipe", function () {
-
+    
       //heroku workaround for Cors
       event.preventDefault();
       var recipeKey = "41bafd3ec7103aeebada67a1c933a210";
@@ -110,7 +110,7 @@ $(document).ready(function () {
 
           var link = "<a href=" + recipes[i].publisher_url + ">" + recipes[i].publisher + "</a>";
 
-          var recipeCard = $("<div class='card'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + "<div class='card-action'>" + link + "</div></div></div></div>");
+          var recipeCard = $("<div class='card'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br>" + "<div class='card-action'>" + "<div class='block'><div class='starbox colours autoupdate smooth'></div><p></p></div>" + "</div></div></div></div>");
 
           $(".recipeDiv").prepend(recipeCard);
         }
