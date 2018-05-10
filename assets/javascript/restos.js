@@ -42,7 +42,12 @@ $(document).on("click", "#restoSearchBtn", function () {
 
 
     var keyword = $("#searchTerm").val();
-    var distance = $("#maxDistance").val();
+    var maxDistance = $("#maxDistance").val();
+    var distance = maxDistance / 0.00062137;
+
+    // function distance(valNum) {
+    //     document.innerHTML=valNum/0.00062137;
+    //   }
 
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -55,32 +60,47 @@ $(document).on("click", "#restoSearchBtn", function () {
     console.log('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + JSON.stringify(pos.lat) + ',' + JSON.stringify(pos.lng), '&radius=' + distance + '&keyword=' + keyword + '&type=restaurant' + '&key=' + apiKey);
 
     $.get(proxyUrl + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + JSON.stringify(pos.lat) + ',' + JSON.stringify(pos.lng) + '&radius=' + distance + '&keyword=' + keyword + '&type=restaurant' + '&key=' + apiKey,
-        function (resto) {
-            console.log(resto);
-            // var result = JSON.parse(resto);
-            // console.log("_______________________")
-            // console.log(result)
+        function (res) {
+            var results = res.results
 
+            var normalizeResults = results.map(result => {
+                return {
+                    name: result.name,
+                    opening_hours: result.opening_hours,
+                    photos: result.photos,
+                    price_level: result.price_level,
+                    rating: result.rating,
+                    vicinity: result.vicinity,
+                    photo_reference: result.photo_reference,
+                }
+            })
+            console.log('result====>', normalizeResults)
+            for (var i = 0; i < normalizeResults.length; i++) {
+                var p = $("<p>").text("Name:" + normalizeResults[i].name)
+                $("#name").append(p);
+                var p = $("<p>").text("Photos:" + normalizeResults[i].photos)
+                $("#photos").append(p);
+                var p = $("<p>").text("Price:" + normalizeResults[i].price_level)
+                $("#price_level").append(p);
+                var p = $("<p>").text("Rating:" + normalizeResults[i].rating)
+                $("#rating").append(p);
 
-            if (resto) {
-                // for (i = 0; i < 10; i++) {
-
-                //     $result.name.append(
-                //         name
-                //     );
-
-                //     var name = name;
-
-
-                // }
-            } else {
-                $events.html("<p>There are no restaraunts in your area</p>");
             }
         }
     );
 
 }
 );
+
+
+
+// name
+// opening hours
+// photos
+// price_level
+// rating
+// vicinity
+
 // geometry
 // name
 // opening_hours
@@ -120,3 +140,8 @@ $(document).on("click", "#restoSearchBtn", function () {
     // %7B%22lat%22:
 
     // %7D
+
+
+
+
+    // https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=CmRaAAAA9c6MZiG7rAsbixKwNJpDD5RB5U8S35fkKi0VY2cb_ZHBI75mu8gT4cb_Am5REBR8WREyPtgxuTFXYlciSZMZ54z1Os3v6mHdW8WFrpdh0sEpvZueDMeBQXlBtPqCHFjQEhCHzpiN5kKKJ1uGeT4kX2wyGhQdnaClnA_4uX5EZ0lM1gR7PuGLnw&key=AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o
