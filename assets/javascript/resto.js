@@ -71,19 +71,37 @@ $(document).on("click", "#restoSearchBtn", function () {
                     price_level: result.price_level,
                     rating: result.rating,
                     vicinity: result.vicinity,
-                    photo_reference: result.photo_reference,
+                    photo_reference: result.photos.photo_reference,
                 }
-            })
+            });
             console.log('result====>', normalizeResults)
             for (var i = 0; i < normalizeResults.length; i++) {
-                var p = $("<p>").text("Name:" + normalizeResults[i].name)
-                $("#name").append(p);
-                var p = $("<p>").text("Photos:" + normalizeResults[i].photos)
-                $("#photos").append(p);
-                var p = $("<p>").text("Price:" + normalizeResults[i].price_level)
-                $("#price_level").append(p);
-                var p = $("<p>").text("Rating:" + normalizeResults[i].rating)
-                $("#rating").append(p);
+                
+                var name = normalizeResults[i].name;
+                var price_level = normalizeResults[i].price_level;
+                var rating = normalizeResults[i].rating;
+                var opening_hours = normalizeResults[i].opening_hours;
+                var vicinity = normalizeResults[i].vicinity;
+                var photo_reference = normalizeResults[i].photo_reference;
+
+                
+                console.log(name);
+                console.log(price_level);
+                console.log(rating);
+                console.log(opening_hours);
+                console.log(vicinity);
+                console.log(photo_reference);
+
+                
+                
+                // var p = $("<p>").text("Name:" + normalizeResults[i].name)
+                // $("#name").append(p);
+                // var p = $("<p>").text("Photos:" + normalizeResults[i].photos)
+                // $("#photos").append(p);
+                // var p = $("<p>").text("Price:" + normalizeResults[i].price_level)
+                // $("#price_level").append(p);
+                // var p = $("<p>").text("Rating:" + normalizeResults[i].rating)
+                // $("#rating").append(p);
 
             }
         }
