@@ -71,7 +71,7 @@ $(document).on("click", "#restoSearchBtn", function () {
                     price_level: result.price_level,
                     rating: result.rating,
                     vicinity: result.vicinity,
-                    photo_reference: result.photos.photo_reference,
+                    photo_reference: result.photos[0].photo_reference,
                 }
             });
             console.log('result====>', normalizeResults)
@@ -91,6 +91,7 @@ $(document).on("click", "#restoSearchBtn", function () {
                 console.log(opening_hours);
                 console.log(vicinity);
                 console.log(photo_reference);
+                console.log('https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + photo_reference + '&key=AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o');
 
                 
                 
