@@ -13,42 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Handlee|Rajdhani|Unica+One" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <!-- starbox -->
-    <link rel="stylesheet" href="assets/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
     <!-- app css -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- rate Yo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <!-- starbox js -->
-    <script src="assets/javascript/jstarbox.js"></script>
-    <script type="text/javascript">
-        //--//--><![CDATA[//><!--
-            jQuery(function() {
-                jQuery('.starbox').each(function() {
-                    var starbox = jQuery(this);
-                    starbox.starbox({
-                        average: starbox.attr('data-start-value'),
-                        changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
-                        ghosting: starbox.hasClass('ghosting'),
-                        autoUpdateAverage: starbox.hasClass('autoupdate'),
-                        buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
-                        stars: starbox.attr('data-star-count') || 5
-                    }).bind('starbox-value-changed', function(event, value) {
-                        if(starbox.hasClass('random')) {
-                            var val = Math.random();
-                            starbox.next().text('Random: '+val);
-                            return val;
-                        } else {
-                            starbox.next().text('Clicked: '+value);
-                        }
-                    }).bind('starbox-value-moved', function(event, value) {
-                        starbox.next().text('Moved to: '+value);
-                    });
-                });
-            });
-        //--><!]]>
-        </script>
+    
 </head>
 <body>
     <header>
@@ -186,6 +158,7 @@
             </div>
         </div>
         <!-- floater on bottom right -->
+        
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large teal">
                 <i class="large material-icons">expand_less</i>
@@ -231,19 +204,15 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-
-
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-
-
     <!-- materialize js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <!-- moment js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- app js -->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-
+    <script type="text/javascript" src="assets/javascript/stars.js"></script>
 </body>
 
 </html>

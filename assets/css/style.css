@@ -93,3 +93,10 @@ body {
 form {
     color: white;
 }
+.starRanking {
+    float: left;
+
+}
+.one, .two, .three, .four, .five{
+    width: 15px;
+}
