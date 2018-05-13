@@ -91,7 +91,7 @@ $(document).on("click", "#restoSearchBtn", function () {
                 console.log(opening_hours);
                 console.log(vicinity);
                 console.log(photo_reference);
-                console.log('https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + photo_reference + '&key=AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o');
+                console.log('https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=' + photo_reference + '&key=AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o');
 
                 
                 

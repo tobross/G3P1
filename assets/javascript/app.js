@@ -221,10 +221,11 @@
                          var rating = normalizeResults[i].rating;
                          var opening_hours = normalizeResults[i].opening_hours;
                          var vicinity = normalizeResults[i].vicinity;
-                         var restoImage = "https://googleapis.com/maps/place/photo?maxwidth=200&photoreference="+normalizeResults[i].photo_reference+"&key="+restoKey;
+                         var restoImage = "<img src='"+"https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=" + normalizeResults[i].photo_reference + "&key=AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o"+"' alt='restoImage'>"
+                        //   "https://googleapis.com/maps/place/photo?maxwidth=200&photoreference="+normalizeResults[i].photo_reference+"&key="+restoKey;
                          var restoID = normalizeResults[i].id
 
-                         var restoCard = $("<div class='card' data-cardId='" + restoID + "'><div class='card-image'>" + restoIcon + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href+'#'>"+vicinity+"</a> <br>Rate It!" + "<br><br><div class='stars'><img class='starRating' id='one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating' id='two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating' id='three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating' id='four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating' id='five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div>");
+                         var restoCard = $("<div class='card' data-cardId='" + restoID + "'><div class='card-image' style='max-height:200px'>" + restoImage + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href+'#'>"+vicinity+"</a> <br>Rate It!" + "<br><br><div class='stars'><img class='starRating' id='one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating' id='two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating' id='three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating' id='four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating' id='five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div>");
 
                          var gold = "assets/images/star.png";
                          var grey = "assets/images/greystar.png";

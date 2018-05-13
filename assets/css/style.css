@@ -72,8 +72,8 @@ body {
     float: left;
     margin-left: 20px;
     background: rgb(64, 74, 83);
-    max-height: 310px;
-    min-height: 310px;
+    max-height: 400px;
+    min-height: 400px;
     color: #f09819;
 }
 .recipePic {
@@ -106,4 +106,9 @@ form {
 }
 #logo {
     max-width: 65px;
+}
+.card-image {
+    max-width: 263px;
+    max-height: 200px;
+    overflow: hidden;
 }
