@@ -72,7 +72,8 @@ body {
     float: left;
     margin-left: 20px;
     background: rgb(64, 74, 83);
-    height: 350px;
+    max-height: 310px;
+    min-height: 310px;
     color: #f09819;
 }
 .recipePic {
@@ -99,4 +100,10 @@ form {
 }
 .one, .two, .three, .four, .five{
     width: 15px;
+}
+.starRating {
+    width: 20px;
+}
+#logo {
+    max-width: 65px;
 }

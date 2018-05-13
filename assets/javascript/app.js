@@ -1,5 +1,6 @@
  // Initialize Firebase
  $(document).ready(function () {
+
      $("#landing").removeClass("hide");
      var config = {
          apiKey: "AIzaSyBeMkHv3bt0v0tXoc6UikMbHoZTtEMU-v0",
@@ -12,7 +13,25 @@
      firebase.initializeApp(config);
 
      var database = firebase.database();
+     var apiKey = "AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o";
+     var pos;
 
+     if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function (position) {
+             pos = {
+                 lat: position.coords.latitude,
+                 lng: position.coords.longitude
+             };
+
+             console.log(pos);
+
+         }, function () {
+             handleLocationError(true, infoWindow, map.getCenter());
+         });
+     } else {
+         // Browser doesn't support Geolocation
+         handleLocationError(false, infoWindow, map.getCenter());
+     }
      // Weather code.
      var zip = 78660;
      var weatherKey = "11d3ec545af75db253dcba87baa3df79";
@@ -62,7 +81,7 @@
                          var eventTime = moment(event.start.local).format('M/D/YYYY h:mm A');
                          if (event.logo) {
                              var eventImage = "<img id='recipePic' src='" + event.logo.url + "' alt='EventLogo'>";
-                             
+
                          } else {
                              res.events[-1];
                          }
@@ -74,9 +93,10 @@
                          var eventID = res.events[i].id;
                          var event = "<a href='" + event.url + "'>" + event.name.text + "</a>";
                          var eventLink = "<a href='" + event.url + "><span>" + event.name + "</span></a>";
-                         var eventCard = $("<div class='card' data-cardId='" + eventID + "'><div class='card-image'>" + eventImage + "<span class='card-title'>" + free + "</span></div><div class='card-content'>" + event + "<br><br>" + eventTime + "<br><br>Rate It!" + "<div class='stars'><img class='starRating one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div>");
+                         var eventCard = $("<div class='card' data-cardId='" + eventID + "'><div class='card-image'>" + eventImage + "<span class='card-title'>" + free + "</span></div><div class='card-content'>" + event + "<br><br>" + eventTime + "<br><br>Rate It!" + "<br><div class='stars'><img class='starRating' id='one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating' id='two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating' id='three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating' id='four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating' id='five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div>");
+                         //star hover function.
                          var gold = "assets/images/star.png";
-                         var grey = "assets/images/greystar.png"
+                         var grey = "assets/images/greystar.png";
                          $(".one").hover(function () {
                              $(".one").attr("src", gold);
                          }, function () {
@@ -125,16 +145,144 @@
                          $eventDiv.append(eventCard);
                      }
                  }
+                 var rating;
                  $(document).on("click", ".starRating", function () {
-                     var rating = parseInt($(this).attr("value"));
+                     rating = parseInt($(this).attr("value"));
                      var cardID;
-                     database.ref().push({
-                         ID : eventID,
-                         Rating : rating
+                     database.ref("/" + eventID).set({
+                         Rating: rating
                      })
+
                      $(this).parents(".stars").hide();
                  })
+                 //  database.ref("/" + eventID).on("value", function (snap) {
+                 //      if (snap.child("Rating").exists()) {
+                 //          var ratingArray = [];
+                 //          ratingArray.push(snap.val().Rating);
+                 //          console.log(ratingArray);
+                 //         //  ratingArray.push(rating);
+                 //          database.ref("/" + eventID).set({
+                 //              Rating: ratingArray
+                 //          })
+                 //  } else {
+                 //      database.ref("/" + eventID).set({
+                 //          Rating: [rating]
+                 //      })
+                 //  })
              })
+     });
+     $(document).on("click", "#eatOut", function () {
+         $("#foodPage").addClass("hide");
+         $("#restaurantFinder").removeClass("hide");
+
+         $(document).on("click", "#restoSearchBtn", function () {
+             event.preventDefault();
+
+             var keyword = $("#searchTerm").val();
+             var maxDistance = $("#maxDistance").val();
+             //distance converted into miles from meters.
+             var restoDistance = maxDistance / 0.00062137;
+             var proxyURL = "https://cors-anywhere.herokuapp.com/";
+             var restoKey = "AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o";
+             // make API call.
+             $.get(proxyURL + 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=' + JSON.stringify(pos.lat) + ',' + JSON.stringify(pos.lng) + '&radius=' + restoDistance + '&keyword=' + keyword + '&type=restaurant' + '&key=' + restoKey,
+                 function (res) {
+                     var results = res.results
+
+                     var normalizeResults = results.map(result => {
+                         return {
+                             name: result.name,
+                             opening_hours: result.opening_hours,
+                             photos: result.photos,
+                             price_level: result.price_level,
+                             rating: result.rating,
+                             vicinity: result.vicinity,
+                             photo_reference: result.photos[0].photo_reference,
+                             id: result.place_id
+                         }
+                     });
+                     console.log("result=====>", normalizeResults);
+                     for (var i = 0; i < normalizeResults.length; i++) {
+                         var restoIcon = "<img src='assets/images/restaurant.png' alt='icon'>"
+                         var restoName = normalizeResults[i].name;
+                         var price_level = [];
+                         for (x = 0; x < parseInt(normalizeResults[i].price_level); x++) {
+                             price_level.push("<img src='assets/images/money.png' alt='money' style='width:20px'>");
+                         };
+                         var restoOC;
+                         if (normalizeResults[i].opening_hours.open_now == true) {
+                            restoOC = "Open";
+                            $(".card-title").attr("style", "color:green !important;")
+                        }
+                        else {
+                            restoOC = "Closed";
+                            $(".card-title").attr("style", "color:green !important;")
+                        };
+                         var rating = normalizeResults[i].rating;
+                         var opening_hours = normalizeResults[i].opening_hours;
+                         var vicinity = normalizeResults[i].vicinity;
+                         var restoImage = "https://googleapis.com/maps/place/photo?maxwidth=200&photoreference="+normalizeResults[i].photo_reference+"&key="+restoKey;
+                         var restoID = normalizeResults[i].id
+
+                         var restoCard = $("<div class='card' data-cardId='" + restoID + "'><div class='card-image'>" + restoIcon + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href+'#'>"+vicinity+"</a> <br>Rate It!" + "<br><br><div class='stars'><img class='starRating' id='one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating' id='two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating' id='three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating' id='four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating' id='five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div>");
+
+                         var gold = "assets/images/star.png";
+                         var grey = "assets/images/greystar.png";
+                         //star hover function.
+                         $(".one").hover(function () {
+                             $(".one").attr("src", gold);
+                         }, function () {
+                             $(".one").attr("src", grey);
+                         })
+                         $(".two").hover(function () {
+                             $(".two").attr("src", gold);
+                             $(".one").attr("src", gold);
+                         }, function () {
+                             $(".two").attr("src", grey);
+                             $(".one").attr("src", grey);
+                         })
+                         $(".three").hover(function () {
+                             $(".three").attr("src", gold);
+                             $(".two").attr("src", gold);
+                             $(".one").attr("src", gold);
+                         }, function () {
+                             $(".three").attr("src", grey);
+                             $(".two").attr("src", grey);
+                             $(".one").attr("src", grey);
+                         })
+                         $(".four").hover(function () {
+                             $(".four").attr("src", gold);
+                             $(".three").attr("src", gold);
+                             $(".two").attr("src", gold);
+                             $(".one").attr("src", gold);
+                         }, function () {
+                             $(".four").attr("src", grey);
+                             $(".three").attr("src", grey);
+                             $(".two").attr("src", grey);
+                             $(".one").attr("src", grey);
+                         })
+                         $(".five").hover(function () {
+                             $(".five").attr("src", gold);
+                             $(".four").attr("src", gold);
+                             $(".three").attr("src", gold);
+                             $(".two").attr("src", gold);
+                             $(".one").attr("src", gold);
+                         }, function () {
+                             $(".five").attr("src", grey);
+                             $(".four").attr("src", grey);
+                             $(".three").attr("src", grey);
+                             $(".two").attr("src", grey);
+                             $(".one").attr("src", grey);
+                         })
+
+                         $(".restoDiv").prepend(restoCard);
+                         
+                     }
+
+                 })
+
+
+         })
      });
      $(document).on("click", "#eatIn", function () {
          $("#foodPage").addClass("hide");
@@ -166,9 +314,11 @@
 
                      var link = "<a href=" + recipes[i].publisher_url + ">" + recipes[i].publisher + "</a>";
 
-                     var recipeCard = $("<div class='card'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br><br>" + "Rate It!" + "<br><br><div class='stars'><img class='starRating' id='one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating' id='two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating' id='three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating' id='four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating' id='five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div></div></div>");
+                     var recipeID = recipes[i].recipe_id;
+
+                     var recipeCard = $("<div class='card' data-cardID='" + recipeID + "'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br><br>" + "Rate It!" +  + "</div></div></div>");
                      var gold = "assets/images/star.png";
-                     var grey = "assets/images/greystar.png"
+                     var grey = "assets/images/greystar.png";
                      $("#one").hover(function () {
                          $("#one").attr("src", gold);
                      }, function () {
@@ -215,16 +365,21 @@
                          $("#one").attr("src", grey);
                      })
 
-                     $(".starRating").on("click", function (event) {
+                     $(document).on("click", ".starRating", function () {
                          var rating = parseInt($(this).attr("value"));
-                         console.log(rating);
-                         $(".starRating").hide();
+                         var cardID;
+                         database.ref().push({
+                             ID: recipeID,
+                             Rating: rating
+                         })
+                         $(this).parents(".stars").hide();
                      })
 
                      $(".recipeDiv").prepend(recipeCard);
                  }
              })
          });
+
      })
  });
  $(document).on("click", "#eatOut", function () {

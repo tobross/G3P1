@@ -26,16 +26,13 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Logo</a>
+                <a href="#!" class="brand-logo"><img id="logo" src="assets/images/wdywtdicon.png" alt="logo"></a>
                 <ul class="right hide-on-med-and-down">
                     <li>
                         <a href="parallax-template/index.html">Home</a>
                     </li>
                     <li>
                         <a href="index.html">WWYD</a>
-                    </li>
-                    <li>
-                        <a href="activities.html">Activities</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +44,7 @@
                 <p></p>
             </div>
         </div>
-        <!-- WDYWDT -->
+        <!-- Landing Page -->
         <div class="section hide" id="landing">
             <div class="row container">
                 <div class="col-md-12">
@@ -68,6 +65,7 @@
                 </div>
             </div>
         </div>
+        <!-- Food Landing -->
         <div class="section hide" id="foodPage">
             <div class="row container">
                 <div class="col-md-12">
@@ -90,6 +88,7 @@
                 </div>
             </div>
         </div>
+        <!-- Activities Page -->
         <div class="section hide" id="activitiesPage">
                 <div class="row container">
                     <div class="col-md-12">
@@ -125,6 +124,35 @@
                     </div>
                 </div>
             </div>
+            <!-- restaurant Finder -->
+            <div class="section hide" id="restaurantFinder">
+                <div class="row container">
+                    <div class="col-md-12">
+                        <h2 class="header">Where do you want to eat?</h2>
+                        <p class="grey-text dext-darken-3 lighten-3">
+                        </div>
+                        <div class="row container btns">
+                            <div class="col-md-12">
+                                <form>
+                                    Search: <i class="material-icons right">search</i> 
+                                    <br><br>
+                                    <input id="searchTerm" type="text" name="searchTerm">
+                                    <br><br>
+                                    Max travel distance:
+                                    <br><br>
+                                    <input id="maxDistance" type="text" name="maxDistance">
+                                    <br><br>
+                                    <button class="btn waves-effect waves-light" id="restoSearchBtn"  type="submit" name="action">
+                                            Let's Go!
+                                            <i class="material-icons right">play_arrow</i>
+                                </form>
+                            </div>
+                            <div class="restoDiv"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Recipe Finder -->
         <div class="section hide" id="recipeFinder">
             <div class="row container">
                 <div class="col-md-12">
