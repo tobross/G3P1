@@ -4,17 +4,21 @@ font-family: 'Handlee', cursive;
 font-family: 'Didact Gothic', sans-serif;
 font-family: 'Unica One', cursive; */
 
+
+
+
 /* sticky footer */
 
 .parallax-container{
     height: 250px;
+    width: 100%; 
 }
 
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url("../images/nightkyline.jpg");
+    /* background-image: url("../images/nightkyline.jpg"); */
   }
 
   main {
@@ -22,7 +26,7 @@ body {
         /* margin-top: 10%;
     margin-bottom: 10%; */
     text-align: center;
-    background-image: url("../images/nightkyline.jpg")!important;
+    /* background-image: url("../images/nightkyline.jpg")!important; */
   }
 
 .nav-wrapper, footer{
@@ -31,15 +35,10 @@ body {
 }
 
 .brand-logo{
-    margin-left:20px;
+    margin-left: 20px;
     font-family: 'Unica One', cursive;
 }
 
-
-
-.parallax-container { 
-    width: 100%; 
-}
 
 
 .btn{
@@ -63,7 +62,7 @@ body {
 }
 .section {
     margin: 0 auto;
-    background: slategray;
+    background: rgba(64, 74, 83, 0.443);
 }
 .card {
     width: 30%;
@@ -71,7 +70,7 @@ body {
     border: 2px solid #096da7;
     float: left;
     margin-left: 20px;
-    background: rgb(64, 74, 83);
+    background: rgba(64, 74, 83, 0.272);
     max-height: 400px;
     min-height: 400px;
     color: #f09819;
@@ -111,4 +110,26 @@ form {
     max-width: 263px;
     max-height: 200px;
     overflow: hidden;
+}
+
+/* breakpoints */
+
+/* small screens */
+@media only screen and (max-width: 400px) {
+    .parallax-container{
+        height: 100px;
+        width: 100%; 
+    }
+
+  #intro,#outro{
+      font-size: 35px;
+      font-weight: 20;
+      
+  }
+  .section,
+  .card, #intro,#outro{
+      background-color: rgba(245, 245, 245, 0.416);
+      color: goldenrod;
+        }
+
 }

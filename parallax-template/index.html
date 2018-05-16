@@ -22,48 +22,56 @@
 
   <!--   Nav Section   -->
   <nav>
-      <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">Logo</a>
-          <ul class="right hide-on-med-and-down">
-              <li>
-                  <a href="index.html">Home</a>
-              </li>
-              <li>
-                      <a href="../index.html">WWYD</a>
-                  </li>
-              <li>
-                  <a href="../activities.html">Activities</a>
-              </li>
-              <li>
-                  <a href="../food.html">Food</a>
-              </li>
-             
-          </ul>
-      </div>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+
+      <ul class="right hide-on-med-and-down">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="../index.html">WWYD</a>
+        </li>
+        <li>
+          <a href="../activities.html">Activities</a>
+        </li>
+        <li>
+          <a href="food.html">Food</a>
+        </li>
+
+      </ul>
+    </div>
   </nav>
+  <!-- Mobile Nav Menu -->
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="index.html">Home</a>
+    </li>
+    <li>
+      <a href="../index.html">WWYD</a>
+    </li>
+    <li>
+      <a href="../activities.html">Activities</a>
+    </li>
+    <li>
+      <a href="../food.html">Food</a>
+    </li>
+  </ul>
 
 
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
-      <div class="container">
-        <br>
-        <br>
-        <h1 class="header center white-text text-lighten-2">New App Coming Soon!</h1>
 
-        <!-- <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div> -->
-
-
-        <br>
-        <br>
-
-      </div>
     </div>
 
 
     <div class="parallax">
-      <img src="../assets/images/bonnets.jpg" alt="Succulent">
+      <img src="../assets/images/bonnets.jpg" alt="Bonnets">
     </div>
   </div>
 
@@ -75,12 +83,24 @@
           <h3>
             <i class="mdi-content-send brown-text"></i>
           </h3>
-          <h1>Welcome to App Name</h1>
-          <p class="left-align light">FunTBD is an app intended to relieve the struggle that comes with planning. Basing options on local weather, traffic,
+          <!-- <h1>App Name</h1> -->
+          <p class="left-align light" id="intro">
+
+            Leave Planning Hassles Behind
+          </p>
+
+          <p class="left-align">
+            Making last minute plans can be difficult, but wait no more! With FUNTBD, you can plan your next outing hassle free!
+
+          </p>
+
+
+
+          <!-- FunTBD is an app intended to relieve the struggle that comes with planning. Basing options on local weather, traffic,
             ratings, and price point, pinpoint your exact activity/food by or let us decide and hit the randomize feature!
             Never ask "I don't know, what do you want to do?" again. And, there's no need to do it alone! You can easily
             see events happening in your area based on your interests. ((FunTBD is a placeholder name not discussed or decided
-            upon.))</p>
+            upon.))</p> -->
         </div>
       </div>
 
@@ -90,21 +110,38 @@
 
   <!--   Icon Section   -->
   <div class="row">
+
     <div class="col s12 m4">
       <div class="icon-block">
-        <h2 class="center brown-text">
-          <i class="material-icons">flash_on</i>
+        <h2 class="center teal-text">
+          <i class="material-icons">done_all</i>
         </h2>
-        <h5 class="center">Speeds up development</h5>
+        <h5 class="center">Easy to work with</h5>
 
-        <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally,
-          we refined animations and transitions to provide a smoother experience for developers.</p>
+        <p class="light">Don't let traffic or the weather ruin your plans. FunTBD can help you decide wheather staying in for game night,
+          cooking at home (with easy-access recipes) or if going out to enjoy a beautiful day outdoors, is a better option
+          for you! <br><br>
+        If you are feeling bold, use our Random Feature to try someting new. </p>
       </div>
     </div>
 
+
     <div class="col s12 m4">
       <div class="icon-block">
-        <h2 class="center brown-text">
+        <h2 class="center teal-text">
+          <i class="material-icons">directions_car</i>
+        </h2>
+        <h5 class="center">Beat Traffic</h5>
+
+        <p class="light">We did most of the heavy lifting for you, simply let us use your location or enter your zip code for events near
+          you!</p>
+      </div>
+    </div>
+
+
+    <div class="col s12 m4">
+      <div class="icon-block">
+        <h2 class="center teal-text">
           <i class="material-icons">group</i>
         </h2>
         <h5 class="center">User Experience Focused</h5>
@@ -115,17 +152,7 @@
       </div>
     </div>
 
-    <div class="col s12 m4">
-      <div class="icon-block">
-        <h2 class="center brown-text">
-          <i class="material-icons">settings</i>
-        </h2>
-        <h5 class="center">Easy to work with</h5>
 
-        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also
-          always open to feedback and can answer any questions a user may have about Materialize.</p>
-      </div>
-    </div>
   </div>
 
 
@@ -156,17 +183,17 @@
     <div class="row container">
       <div class="col-md-s12">
 
-        <h2 class="header center">What would you like to do today?</h4>
+          <p class="center-align light" id="outro">
+              Let's Get Started!</p>
 
 
           <br>
           <br>
           <br>
           <br>
-          <br>
-          <br>
+         
 
-<!-- buttons -->
+          <!-- buttons -->
           <div class="row container btns">
             <div class="col-md-12 center ">
 
@@ -202,39 +229,7 @@
   </div>
 
 
-
-
-  <!-- floater on bottom right -->
-
-  <div class="fixed-action-btn">
-      <a class="btn-floating btn-large teal">
-          <i class="large material-icons">expand_less</i>
-      </a>
-      <ul>
-          <li>
-              <a class="btn-floating red">
-                  <i class="material-icons">insert_chart</i>
-              </a>
-          </li>
-          <li>
-              <a class="btn-floating yellow darken-1">
-                  <i class="material-icons">local_pizza</i>
-              </a>
-          </li>
-          <li>
-              <a class="btn-floating green">
-                  <i class="material-icons">videogame_asset</i>
-              </a>
-          </li>
-          <li>
-              <a class="btn-floating blue">
-                  <i class="material-icons">looks</i>
-              </a>
-          </li>
-      </ul>
-  </div>
-
-<!-- footer -->
+  <!-- footer -->
   <footer class="page-footer">
 
     <div class="footer-copyright">
