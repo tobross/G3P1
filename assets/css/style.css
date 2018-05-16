@@ -82,7 +82,7 @@ body {
 .card-title {
     font-size: 24px;
     font-variant: small-caps;
-    color: #b92121 !important;
+    color: #1cca56 !important;
     font-weight: bold !important;
     text-shadow: -1px -1px 0 #000,
     1px -1px 0 #000,
@@ -92,6 +92,9 @@ body {
 }
 form {
     color: white;
+}
+.textForm {
+    width: 200px !important;
 }
 .starRanking {
     float: left;

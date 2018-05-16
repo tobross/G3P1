@@ -101,13 +101,13 @@
                     <div class="row container btns">
                         <div class="col-md-12 ">
                             <form>
-                                Enter starting Zip
+                                Enter starting (5-digit) Zip
                                 <br><br>
-                                <input id="zipcode" type="text" name="zipcode">
+                                <input class="textForm" id="zipcode" type="text" name="zipcode" placeholder="Example: 78705">
                                 <br><br>
-                                Distance from there?
+                                Distance from there? (in miles)
                                 <br><br>
-                                <input id="distance" type="text" name="distance">
+                                <input class="textForm" id="distance" type="text" name="distance" placeholder="Example: 5">
                                 <br><br>
                             <button class="btn waves-effect waves-light time" id="today" time-frame="today" type="submit" name="action">
                                 Today
@@ -138,11 +138,11 @@
                                 <form>
                                     Search: <i class="material-icons right">search</i> 
                                     <br><br>
-                                    <input id="searchTerm" type="text" name="searchTerm">
+                                    <input class="textForm" id="searchTerm" type="text" name="searchTerm" placeholder="Example: Tacos">
                                     <br><br>
-                                    Max travel distance:
+                                    Max travel distance (in miles):
                                     <br><br>
-                                    <input id="maxDistance" type="text" name="maxDistance">
+                                    <input class="textForm" id="maxDistance" type="text" name="maxDistance" placeholder="Example: 5">
                                     <br><br>
                                     <button class="btn waves-effect waves-light" id="restoSearchBtn"  type="submit" name="action">
                                             Let's Go!
@@ -166,11 +166,11 @@
                         <form>
                             Find a Recipe!
                             <br>
-                            <input id="recipeForm" type="text" name="recipe">
+                            <input class="textForm" id="recipeForm" type="text" name="recipe" placeholder="Example: Cocktails">
                             <br>
-                            How many Recipes?
+                            How many Recipes? (Max: 30)
                             <br>
-                            <input id="recipeCount" type="text" data-by-integer="true" placeholder="" pattern="[0-9]" title="Check your input!" name="recipeCount">
+                            <input class="textForm" id="recipeCount" type="text" data-by-integer="true" pattern="[0-9]" title="Check your input!" name="recipeCount" placeholder="Example: 10">
                             <br>
                             <button class="btn waves-effect waves-light" id="findRecipe" type="submit" name="action">
                                     Find it

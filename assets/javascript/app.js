@@ -324,167 +324,76 @@ $.ajax({
                         var vicinity = normalizeResults[i].vicinity;
                         var restoImage = "<img src='" + "https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=" + normalizeResults[i].photo_reference + "&key=AIzaSyAK1-Fn90pNHF4kGlanbTpaWZRh7i-5E9o" + "' alt='restoImage'>"
                         //   "https://googleapis.com/maps/place/photo?maxwidth=200&photoreference="+normalizeResults[i].photo_reference+"&key="+restoKey;
-                        var restoID = normalizeResults[i].id
+                         var restoID = normalizeResults[i].id
 
-                        var restoCard = $("<div class='card' data-cardId='" + restoID + "'><div class='card-image' style='max-height:200px'>" + restoImage + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href='" + "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=" + restoID + "'>" + vicinity + "</a> <br>Rate It!" + "<br><br><div class='stars'><img class='starRating' id='one' src='assets/images/greystar.png' alt='1' value='1'><img class='starRating' id='two' src='assets/images/greystar.png' alt='2' value='2'><img class='starRating' id='three' src='assets/images/greystar.png' alt='3' value='3'><img class='starRating' id='four' src='assets/images/greystar.png' alt='4' value='4'><img class='starRating' id='five' src='assets/images/greystar.png' alt='5' value='5'></div>" + "</div>");
+                         var restoCard = $("<div class='card' data-cardId='" + restoID + "'><div class='card-image' style='max-height:200px'>" + restoImage + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href='"+"https://www.google.com/maps/search/?api=1&query=Google&query_place_id="+restoID +"'>"+vicinity+"</a> <br>Rate It!" + starDiv + "</div>");
 
-                        var gold = "assets/images/star.png";
-                        var grey = "assets/images/greystar.png";
-                        //star hover function.
-                        $(".one").hover(function () {
-                            $(".one").attr("src", gold);
-                        }, function () {
-                            $(".one").attr("src", grey);
-                        })
-                        $(".two").hover(function () {
-                            $(".two").attr("src", gold);
-                            $(".one").attr("src", gold);
-                        }, function () {
-                            $(".two").attr("src", grey);
-                            $(".one").attr("src", grey);
-                        })
-                        $(".three").hover(function () {
-                            $(".three").attr("src", gold);
-                            $(".two").attr("src", gold);
-                            $(".one").attr("src", gold);
-                        }, function () {
-                            $(".three").attr("src", grey);
-                            $(".two").attr("src", grey);
-                            $(".one").attr("src", grey);
-                        })
-                        $(".four").hover(function () {
-                            $(".four").attr("src", gold);
-                            $(".three").attr("src", gold);
-                            $(".two").attr("src", gold);
-                            $(".one").attr("src", gold);
-                        }, function () {
-                            $(".four").attr("src", grey);
-                            $(".three").attr("src", grey);
-                            $(".two").attr("src", grey);
-                            $(".one").attr("src", grey);
-                        })
-                        $(".five").hover(function () {
-                            $(".five").attr("src", gold);
-                            $(".four").attr("src", gold);
-                            $(".three").attr("src", gold);
-                            $(".two").attr("src", gold);
-                            $(".one").attr("src", gold);
-                        }, function () {
-                            $(".five").attr("src", grey);
-                            $(".four").attr("src", grey);
-                            $(".three").attr("src", grey);
-                            $(".two").attr("src", grey);
-                            $(".one").attr("src", grey);
-                        })
+                        
+                         $(".restoDiv").prepend(restoCard);
+                         stars();
+                         
+                     }
 
-                        $(".restoDiv").prepend(restoCard);
-
-                    }
-
-                })
+                 })
 
 
-        })
-    });
-    $(document).on("click", "#eatIn", function () {
-        $("#foodPage").addClass("hide");
-        $("#recipeFinder").removeClass("hide");
+         })
+     });
+     $(document).on("click", "#eatIn", function () {
+         $("#foodPage").addClass("hide");
+         $("#recipeFinder").removeClass("hide");
 
-        $(document).on("click", "#findRecipe", function () {
+         $(document).on("click", "#findRecipe", function () {
 
-            //heroku workaround for Cors
-            event.preventDefault();
-            var recipeKey = "41bafd3ec7103aeebada67a1c933a210";
-            var search = $("#recipeForm").val();
-            var queryURL = "https://food2fork.com/api/search?key=" + recipeKey + "&q=" + search;
-            var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            var targetUrl = queryURL;
+             //heroku workaround for Cors
+             event.preventDefault();
+             var recipeKey = "41bafd3ec7103aeebada67a1c933a210";
+             var search = $("#recipeForm").val();
+             var queryURL = "https://food2fork.com/api/search?key=" + recipeKey + "&q=" + search;
+             var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+             var targetUrl = queryURL;
 
-            $.get(proxyUrl + targetUrl, function (response) {
-                var result = JSON.parse(response);
-                var recipes = result.recipes;
-                var recipeCount = parseInt($("#recipeCount").val());
-                for (i = 0; i < recipeCount; i++) {
+             $.get(proxyUrl + targetUrl, function (response) {
+                 var result = JSON.parse(response);
+                 var recipes = result.recipes;
+                 var recipeCount = parseInt($("#recipeCount").val());
+                 for (i = 0; i < recipeCount; i++) {
 
-                    var image = "<img class='recipePic' src='" + recipes[i].image_url + "' alt='Recipe Image'>";
+                     var image = "<img class='recipePic' src='" + recipes[i].image_url + "' alt='Recipe Image'>";
 
-                    var recipeName = recipes[i].title;
+                     var recipeName = recipes[i].title;
 
-                    var recipeContent = "<a href='" + recipes[i].source_url + "'>" + recipes[i].title + "</a>";
+                     var recipeContent = "<a href='" + recipes[i].source_url + "'>" + recipes[i].title + "</a>";
 
-                    var recipeRating = Math.floor(recipes[i].social_rank);
+                     var recipeRating = Math.floor(recipes[i].social_rank);
 
-                    var link = "<a href=" + recipes[i].publisher_url + ">" + recipes[i].publisher + "</a>";
+                     var link = "<a href=" + recipes[i].publisher_url + ">" + recipes[i].publisher + "</a>";
 
-                    var recipeID = recipes[i].recipe_id;
+                     var recipeID = recipes[i].recipe_id;
 
-                    var recipeCard = $("<div class='card' data-cardID='" + recipeID + "'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br><br>" + "Rate It!" + + "</div></div></div>");
-                    var gold = "assets/images/star.png";
-                    var grey = "assets/images/greystar.png";
-                    $("#one").hover(function () {
-                        $("#one").attr("src", gold);
-                    }, function () {
-                        $("#one").attr("src", grey);
-                    })
-                    $("#two").hover(function () {
-                        $("#two").attr("src", gold);
-                        $("#one").attr("src", gold);
-                    }, function () {
-                        $("#two").attr("src", grey);
-                        $("#one").attr("src", grey);
-                    })
-                    $("#three").hover(function () {
-                        $("#three").attr("src", gold);
-                        $("#two").attr("src", gold);
-                        $("#one").attr("src", gold);
-                    }, function () {
-                        $("#three").attr("src", grey);
-                        $("#two").attr("src", grey);
-                        $("#one").attr("src", grey);
-                    })
-                    $("#four").hover(function () {
-                        $("#four").attr("src", gold);
-                        $("#three").attr("src", gold);
-                        $("#two").attr("src", gold);
-                        $("#one").attr("src", gold);
-                    }, function () {
-                        $("#four").attr("src", grey);
-                        $("#three").attr("src", grey);
-                        $("#two").attr("src", grey);
-                        $("#one").attr("src", grey);
-                    })
-                    $("#five").hover(function () {
-                        $("#five").attr("src", gold);
-                        $("#four").attr("src", gold);
-                        $("#three").attr("src", gold);
-                        $("#two").attr("src", gold);
-                        $("#one").attr("src", gold);
-                    }, function () {
-                        $("#five").attr("src", grey);
-                        $("#four").attr("src", grey);
-                        $("#three").attr("src", grey);
-                        $("#two").attr("src", grey);
-                        $("#one").attr("src", grey);
-                    })
+                     var recipeCard = $("<div class='card' data-cardID='" + recipeID + "'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br><br>" + "Rate It!" + starDiv + "</div>");
+                    
+                     $(document).on("click", ".starRating", function () {
+                         var rating = parseInt($(this).attr("value"));
+                         var cardID;
+                         database.ref().push({
+                             ID: recipeID,
+                             Rating: rating
+                         })
+                         $(this).parents(".stars").hide();
+                     })
+                     
 
-                    $(document).on("click", ".starRating", function () {
-                        var rating = parseInt($(this).attr("value"));
-                        var cardID;
-                        database.ref().push({
-                            ID: recipeID,
-                            Rating: rating
-                        })
-                        $(this).parents(".stars").hide();
-                    })
+                     $(".recipeDiv").prepend(recipeCard);
+                     stars();
+                 }
+             })
+         });
 
-                    $(".recipeDiv").prepend(recipeCard);
-                }
-            })
-        });
-
-    })
-});
-$(document).on("click", "#eatOut", function () {
-    $("#foodPage").addClass("hide");
-    $("#restaurantFinder").removeClass("hide");
-})
+     })
+ });
+ 
+ $(document).on("click", "#eatOut", function () {
+     $("#foodPage").addClass("hide");
+     $("#restaurantFinder").removeClass("hide");
+ })
