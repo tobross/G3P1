@@ -94,6 +94,9 @@ body {
 form {
     color: white;
 }
+.textForm {
+    width: 200px !important;
+}
 .starRanking {
     float: left;
 
