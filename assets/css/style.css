@@ -46,7 +46,9 @@ footer {
 .btn {
     background-color: #f09819;
 }
-
+.btn:hover{ 
+    background-color: #82b1ff !important ;
+  }
 .btn:focus{ 
     background-color: #82b1ff !important ;
   }
