@@ -26,8 +26,8 @@
     <main>
    
             <div class="logostuff">
-                    <div class="logoPic">
-                        <a href='index.html'class="logo"><img id="logo" src="assets/images/rOsLogo.png" alt="logo" style="max-width: 100px;"></a>
+                    <div class="outlogo">
+                        <a href='index.html'><img id="logoPic" src="assets/images/rOsLogo.png" alt="logo" style="max-width: 100px;"></a>
                     </div>
     
         
@@ -44,15 +44,15 @@
         <!-- Landing Page -->
         <div class="section hide" id="landing">
             <div class="row container">
-                <div class="col-md-12">
+                <div class="col s12">
                     <h2 class="header">What do you want to do today? </h2>
                     <p class="grey-text text-darken-3 lighten-3">
                 </div>
                 <div class="row container btns">
-                    <div class="col-md-12 ">
+                    <div class="col s12 ">
                         <button class="btn waves-effect waves-light" id="activities" type="submit" name="action">
                             Activities
-                            <i class="material-icons right">golf_course</i>
+                            <i class="material-icons right center-align">golf_course</i>
                         </button>
 
                         <button class="btn waves-effect waves-light" id="food" type="submit" name="action">Food
@@ -65,7 +65,7 @@
         <!-- Food Landing -->
         <div class="section hide" id="foodPage">
             <div class="row container">
-                <div class="col s12">
+                <div class="col s12 ">
                     <h2 class="header">DIY or Not?</h2>
                     <p class="grey-text text-darken-3 lighten-3">
                 </div>
@@ -88,7 +88,7 @@
         <!-- Activities Page -->
         <div class="section hide" id="activitiesPage">
                 <div class="row container">
-                    <div class="col s12">
+                    <div class="col s12 m6">
                         <h2 class="header">Local Events</h2>
                         <p class="grey-text text-darken-3 lighten-3">
                     </div>
@@ -106,14 +106,14 @@
                                 <br><br>
                             <button class="btn waves-effect waves-light time" id="today" time-frame="today" type="submit" name="action">
                                 Today
-                                <i class="material-icons right todayIcon">today</i>
+                                <i class="material-icons right">today</i>
                             </button>
                             <button class="btn waves-effect waves-light time" id="tomorrow" time-frame="tomorrow" type="submit" name="action">
                                     Tomorrow
-                                    <i class="material-icons right tmwIcon">navigate_next</i>
+                                    <i class="material-icons right">navigate_next</i>
                                 </button>   
                             <button class="btn waves-effect waves-light time" id="weekend" time-frame="this_weekend" type="submit" name="action">This Weekend
-                                <i class="material-icons right weekendIcon">date_range</i>
+                                <i class="material-icons right">date_range</i>
                             </button>
                             </form>
                         </div>
@@ -142,10 +142,10 @@
                                     <br><br>
                                     <button class="btn waves-effect waves-light" id="restoSearchBtn"  type="submit" name="action">
                                             Let's Go!
-                                            <i class="material-icons right goIcon">play_arrow</i>
+                                            <i class="material-icons right">play_arrow</i>
                                 </form>
                             </div>
-                            <div class="restoDiv col s6 m6 l3"></div>
+                            <div class="restoDiv"></div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                     <p class="grey-text text-darken-3 lighten-3">
                 </div>
                 <div class="row container btns">
-                    <div class="col-md-12 ">
+                    <div class="col s12 ">
                         <form>
                             Find a Recipe!
                             <br>
@@ -170,7 +170,7 @@
                             <br>
                             <button class="btn waves-effect waves-light" id="findRecipe" type="submit" name="action">
                                     Find it
-                                    <i class="material-icons right recipeIcon">search</i>
+                                    <i class="material-icons right">search</i>
                                 </button>
                             </form>
                         <div class="recipeDiv"></div>
@@ -208,7 +208,6 @@
     <script src="vegas/vegas.min.js"></script>
     <script type="application/javascript">
         function getIP(json) {
-            zip = json.postal;
           console.log(json.postal);
         }
       </script>

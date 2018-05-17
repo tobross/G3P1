@@ -33,18 +33,11 @@ footer {
       width: 300px;
       max-width:400px !important;
       float: left;
-      position: relative;
-      
-
+      position: fixed;
+      left: 0;
+      top: -35pt;
+    
 }
-
-/* .logoPic {
-    margin: 0 auto;
-    float: left;
-    font-size: .3vh;
-    position: relative;
-    top: 42px;
-} */
 
 .btn {
     background-color: #f09819;
@@ -191,10 +184,6 @@ form {
     left: 135px !important;
 }
 
-.sun {
-    width: 30% !important;
-    top: 10px !important;
-}
 
 .clouds {
     width: 35% !important;
@@ -215,7 +204,171 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+
+  /* Media Queries */
   @media screen and (max-width: 400px){
+    .btn{
+        height: 50px;
+        width: 100%;
+      
+    }
+    #cardWeather {
+        width: 100px;
+        max-height: 60px !important;
+        min-height: 60px !important;
+        font-size: 8pt;
+        top: -50pt;
+    }
+
+    .card-stacked{
+        font-size: 5pt;
+        float: left;
+        top: -5pt;
+        left: -5pt;
+        position: relative;
+    }
+    .card-content{
+        font-size: 5pt;
+        float: left;
+        top: -30pt;
+        left: -5pt;
+        position: relative;
+    
+    }
+    #imgWeather {
+        /* position: fixed; */
+        top: -125px !important;
+        left: 65pt !important;
+        z-index: 1;
+        width: 50pt;
+        overflow: visible !important;
+    }
+
+    /* p {
+        font-size: 10pt;
+    }
+    h4 {
+        margin-top: -5px;
+        font-size: 17pt;
+    } */
+    #logPic {
+        width: 140px !important;
+        position: fixed;
+        left:-50pt;
+              
+    }
+    #imgWeather {
+        position: relative;
+        top: -123px !important;
+        left: 55px !important;
+        overflow: visible !important;
+    }
+ 
+    .card{
+        margin-left: 0px;
+        width: 100%;
+    }
+    .section {
+     margin-top: -145px;
+    }
+    h2 {
+        font-size: 20pt;
+    }
+    .page-footer {
+        margin-bottom: -12px;
+        padding-top: 0px;
+    }
+    #weekend {
+        height: 50px;
+        font-size: 10pt;
+        margin-top: 5px;
+        width: 204px;
+    }
+    #restoSearchBtn, #findRecipe, #today, #tomorrow {
+        height: 50px;
+        font-size: 10pt;
+    }
+    .goIcon, .todayIcon, .tmwIcon, .weekendIcon, .recipeIcon {
+        margin-left: -8px !important;
+        font-size: 10pt !important;
+    
+    }
+  }
+
+  @media screen and (max-width: 750px){
+
+
+#cardWeather{
+    width: 150px;
+    max-height: 80px !important;
+    min-height: 60px !important;
+    float:right;
+    position: relative;
+    left:-1px;
+    top: -50pt;
+
+}
+.card-content{
+    font-size: 5pt;
+    float: left;
+    top: -30pt;
+    left: -5pt;
+    position: relative;
+
+}
+
+.card-stacked{
+    font-size: 15pt;
+    top: 0px !important;
+    left: 13pt;
+    float: left;
+    line-height: 5vh;
+}
+
+#imgWeather {
+    /* position: fixed; */
+    top: -125px !important;
+    left: 65pt !important;
+    z-index: 1;
+    width: 50pt;
+    overflow: visible !important;
+}
+
+#bright{
+    width:50px;
+    z-index: 1;
+}
+
+.outlogo
+{
+      width: 350px !important;
+      max-width:500px !important;
+      float: left;
+      position: relative !important;
+      left: -100pt;
+     
+}
+
+
+btn{
+    min-width: 200px;
+    min-height:50px;
+    float: left;
+}
+h5 {
+    margin-top: -5px;
+    font-size: 10pt;
+    margin-left: -10px;
+}
+
+
+  }
+
+
+
+
+  @media screen and (max-width: 1500px){
     .btn{
         height: 100px;
         width: 100px;
@@ -225,7 +378,7 @@ body {
         width: 100px;
         max-height: 60px !important;
         min-height: 60px !important;
-        font-size: 8pt;
+        font-size: 6pt;
     }
     p {
         font-size: 10pt;
@@ -235,7 +388,7 @@ body {
         font-size: 17pt;
     }
     #logo {
-        width: 140px;
+        width: 40px;
     }
     #imgWeather {
         position: relative;
@@ -275,4 +428,4 @@ body {
         margin-left: -8px !important;
         font-size: 10pt !important;
     }
-  }
+  }  

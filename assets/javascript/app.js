@@ -232,7 +232,7 @@ console.log("Is it after 6pm? -- " + backChange);
             // city  name in card-title
             $(".card-stacked").html("<p> " + response.name + "</p>");
             // weather info in card-content
-            $(".card-content").html("<p><h4>" + theWeather + ' \xB0F' + "</h4></p>" + "<p><h7> " + now + "</h7></p>");
+            $(".card-content").html("<p><h6>" + theWeather + ' \xB0F' + "</h6></p>" + "<p><h7> " + now + "</h7></p>");
         
           });
      
