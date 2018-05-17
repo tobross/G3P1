@@ -132,7 +132,8 @@
      
     
         //  Vegas 
-        $("main").vegas({
+        
+        $("body").vegas({
             slides: [
                 { src:"assets/images/citybonnets.jpg"},
                 { src:"assets/images/skyline.jpg"},
@@ -155,7 +156,7 @@ var backChange = (moment().isSameOrAfter(moment(nightTime)));
 console.log("Is it after 6pm? -- " + backChange);
 
      // Weather code.
-     var zip = 78660;
+     var zip = 78705;
      var weatherKey = "11d3ec545af75db253dcba87baa3df79";
      var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + ",us&units=imperial&appid=11d3ec545af75db253dcba87baa3df79";
 
