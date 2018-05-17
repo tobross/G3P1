@@ -11,10 +11,9 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
-.logostuff {
-    width: 120px;
-    height: auto;
-}
+
+
+
 main {
     flex: 1 0 auto;
     min-height: 900px;
@@ -39,13 +38,13 @@ footer {
 
 }
 
-.brand-logo {
+/* .logoPic {
     margin: 0 auto;
     float: left;
-    font-size: 30px;
+    font-size: .3vh;
     position: relative;
     top: 42px;
-}
+} */
 
 .btn {
     background-color: #f09819;
@@ -106,7 +105,7 @@ footer {
 }
 
 .card-title {
-    font-size: 24px;
+    font-size: .2vh;
     font-variant: small-caps;
     color: #1cca56 !important;
     font-weight: bold !important;
@@ -161,13 +160,13 @@ form {
     /* z-index: -1; */
     position: fixed;
     right: 50px;
-    top: 70px !important;
+    top: 25px !important;
 }
 
 .card-stacked {
     font-family: 'Rajdhani', sans-serif;
     font-weight: bolder !important;
-    font-size: 30px;
+    font-size: .3vh;
     color: teal;
     position: relative;
     float: left;
@@ -203,6 +202,29 @@ form {
 
 p.test {
     clear: both;
-    font-size: 40px;
+    font-size: .4vh;
     line-height: 100px;
 }
+
+/* small screens */
+@media screen and (max-width: 360px) {
+/* 
+    #foodPage, #activitiesPage, #restaurantFinder, #recipeFinder{
+        
+        position: absolute;
+         width: 100%;
+        margin: 0 auto;
+       
+ } */
+
+form, input.placeholder, input{
+    align-content: center;
+    text-align: center;
+ 
+}
+
+};
+
+
+
+

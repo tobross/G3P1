@@ -239,7 +239,8 @@ console.log("Is it after 6pm? -- " + backChange);
             $(".card-content").html("<p><h4>" + theWeather + ' \xB0F' + "</h4></p>" + "<p><h7> " + now + "</h7></p>");
         
           });
-     //to food page.
+     
+          //to food page.
      $(document).on("click", "#food", function () {
          $("#landing").addClass("hide");
          $("#foodPage").removeClass("hide");
@@ -338,7 +339,7 @@ console.log("Is it after 6pm? -- " + backChange);
                          var restoOC;
                          if (normalizeResults[i].opening_hours.open_now == true) {
                              restoOC = "Open";
-                             $(".card-title").attr("style", "color:green !important;")
+                             $(".card-title").attr("style", "color:orange !important;")
                          } else {
                              restoOC = "Closed";
                              $(".card-title").attr("style", "color:green !important;")
@@ -359,7 +360,7 @@ console.log("Is it after 6pm? -- " + backChange);
                          //   "https://googleapis.com/maps/place/photo?maxwidth=200&photoreference="+normalizeResults[i].photo_reference+"&key="+restoKey;
 
 
-                         var restoCard = $("<div class='card' data-cardId='" + restoID + "'><div class='card-image' style='max-height:200px'>" + restoImage + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href='" + "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=" + restoID + "'>" + vicinity + "</a> <br>Rate It!" + starDiv + "</div>" + "<div class='currentRating'>" + "<span>" + "RoS User Rating: " + currentRating + "</span>" + "</div>");
+                         var restoCard = $("<div class='card col s12 m6 l12' data-cardId='" + restoID + "'><div class='card-image' style='max-height:100px'>" + restoImage + "<span class='card-title' style='#'>" + restoOC + "</span></div><div class='card-content'>" + restoName + "<br>" + price_level + "<br>Location:<br> " + "<a href='" + "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=" + restoID + "'>" + vicinity + "</a> <br>Rate It!" + starDiv + "</div>" + "<div class='currentRating'>" + "<span>" + "RoS User Rating: " + currentRating + "</span>" + "</div>");
                          // console.log(currentRating);
 
 
@@ -417,7 +418,7 @@ console.log("Is it after 6pm? -- " + backChange);
                     });
 
 
-                     var recipeCard = $("<div class='card' data-cardID='" + recipeID + "'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br><br>" + "Rate It!" + starDiv + "</div>" + "<div class='currentRating'>" + "<span>" + "RoS User Rating: " + currentRating + "</span>" + "</div>");
+                     var recipeCard = $("<div class='card col s6 m6 l12' data-cardID='" + recipeID + "'><div class='card-image'>" + image + "<span class='card-title'>" + recipeName + "</span></div><div class='card-content'>" + recipeContent + "<br><br>Rating: " + recipeRating + "%<br><br>" + link + "<br><br>" + "Rate It!" + starDiv + "</div>" + "<div class='currentRating'>" + "<span>" + "RoS User Rating: " + currentRating + "</span>" + "</div>");
 
                      clicky();
 
