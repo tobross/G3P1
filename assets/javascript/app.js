@@ -106,7 +106,6 @@
      var database = firebase.database();
 
      database.ref("/").on("value", function (snapshot) {
-         console.log(snapshot.val());
      }, function (error) {
          console.log("the error: " + error);
      });
@@ -119,9 +118,6 @@
                  lat: position.coords.latitude,
                  lng: position.coords.longitude
              };
-
-             console.log(pos);
-
          }, function () {
              handleLocationError(true, infoWindow, map.getCenter());
          });

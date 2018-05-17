@@ -202,3 +202,20 @@ p.test {
     font-size: 40px;
     line-height: 100px;
 }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  @media screen and (max-width: 400px){
+    .btn{
+        background-color: red !important;
+        height: 100px !important;
+        max-height: 100px !important;
+        min-height: 100px !important;
+    }
+  }
