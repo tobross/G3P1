@@ -172,10 +172,10 @@ form {
     left: 4%;
 }
 
-.card-image {
+#imgWeather {
     position: relative;
-    top: -135px;
-    left: 135px;
+    top: -130px !important;
+    left: 135px !important;
 }
 
 .sun {
