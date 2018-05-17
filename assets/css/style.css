@@ -253,7 +253,7 @@ body {
         width: 100%;
     }
     .section {
-     margin-top: -145px;
+     top: 145px;
     }
     h2 {
         font-size: 13pt;
@@ -314,7 +314,6 @@ body {
         width: 100%;
     }
     .section {
-     margin-top: -145px;
      top: 145px !important;
     }
     h2 {
@@ -329,6 +328,10 @@ body {
         font-size: 10pt;
         margin-top: 5px;
         width: 204px;
+    }
+    #tomorrow{
+        font-size:10pt;
+        width: 120px;
     }
     #restoSearchBtn, #findRecipe, #today, #tomorrow {
         height: 50px;
