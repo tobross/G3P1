@@ -6,65 +6,75 @@ font-family: 'Unica One', cursive; */
 
 /* sticky footer */
 
-.parallax-container{
-    height: 250px;
-}
-
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url("../images/nightkyline.jpg");
-  }
-
-  main {
+}
+.logostuff {
+    width: 120px;
+    height: auto;
+}
+main {
     flex: 1 0 auto;
-        /* margin-top: 10%;
-    margin-bottom: 10%; */
+    min-height: 900px;
     text-align: center;
-    background-image: url("../images/nightkyline.jpg")!important;
-  }
+}
 
-.nav-wrapper, footer{
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+footer {
+    background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%) !important;
+    color: #f09819 !important;
+}
+#logo
+{
+      width: 300px;
+      max-width:400px !important;
+      float: left;
+      position: relative;
+      
 
 }
 
-.brand-logo{
-    margin-left:20px;
-    font-family: 'Unica One', cursive;
+.brand-logo {
+    margin: 0 auto;
+    float: left;
+    font-size: 30px;
+    position: relative;
+    top: 42px;
 }
 
-
-
-.parallax-container { 
-    width: 100%; 
-}
-
-
-.btn{
+.btn {
     background-color: #f09819;
 }
-
-
-
 .section {
     margin: 0 auto;
-    
 }
 
-.info{
-    font-family: 'Didact Gothic', sans-serif;
+#landing{
+    margin: 0 auto;
+    background: rgba(169, 177, 184, 0.714);  
+    position: absolute;
+    top: 300px;
+    width: 100%;
   
 }
 
-#img1{
+#foodPage, #activitiesPage{
+    background: rgba(169, 177, 184, 0.714); 
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    
+}
+
+.info {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+#img1 {
     width: 100px;
 }
-.section {
-    margin: 0 auto;
-    background: slategray;
-}
+
 .card {
     width: 30%;
     height: auto;
@@ -72,46 +82,114 @@ body {
     float: left;
     margin-left: 20px;
     background: rgb(64, 74, 83);
-    max-height: 400px;
-    min-height: 400px;
+    max-height: 420px;
+    min-height: 420px;
     color: #f09819;
 }
+
 .recipePic {
     width: 200px;
     height: 200px;
 }
+
 .card-title {
     font-size: 24px;
     font-variant: small-caps;
     color: #1cca56 !important;
     font-weight: bold !important;
-    text-shadow: -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000, 
-    1px 1px 0 #000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-overflow: ellipsis;
 }
+
 form {
     color: white;
 }
+
 .textForm {
     width: 200px !important;
 }
+
 .starRanking {
     float: left;
-
 }
-.one, .two, .three, .four, .five{
+
+.one,
+.two,
+.three,
+.four,
+.five {
     width: 15px;
 }
+
 .starRating {
     width: 20px;
 }
-#logo {
-    max-width: 65px;
-}
+
+
 .card-image {
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
     max-width: 263px;
     max-height: 200px;
     overflow: hidden;
+}
+
+/* weather 1 day*/
+
+#cardWeather {
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+    border-radius: 5px 20px 5px;
+    opacity: .9;
+    border: 0;
+    width: 225px;
+    max-height: 130px !important;
+    min-height: 130px !important;
+    /* z-index: -1; */
+    position: fixed;
+    right: 50px;
+    top: 70px !important;
+}
+
+.card-stacked {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bolder !important;
+    font-size: 30px;
+    color: teal;
+    position: relative;
+    float: left;
+    left: 15%;
+    top: 10%;
+    text-align: left;
+}
+
+/* temp */
+
+.card-content {
+    color: teal;
+    position: relative;
+    text-align: left;
+    left: 4%;
+}
+
+.card-image {
+    position: relative;
+    top: -135px;
+    left: 135px;
+}
+
+.sun {
+    width: 30% !important;
+    top: 10px !important;
+}
+
+.clouds {
+    width: 35% !important;
+    top: 35px !important;
+}
+
+p.test {
+    clear: both;
+    font-size: 40px;
+    line-height: 100px;
 }
