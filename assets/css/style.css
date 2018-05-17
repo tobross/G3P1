@@ -46,6 +46,13 @@ footer {
 .btn {
     background-color: #f09819;
 }
+.btn:hover {
+    background-color: #82b1ff;
+}
+.btn:focus {
+    background-color: #82b1ff;
+}
+
 .section {
     margin: 0 auto;
 }
@@ -59,12 +66,14 @@ footer {
   
 }
 
-#foodPage, #activitiesPage{
-    background: rgba(169, 177, 184, 0.714); 
+#foodPage, 
+#activitiesPage, 
+#restaurantFinder, 
+#recipeFinder{
+    background: rgba(169, 177, 184, 0.714);
     position: absolute;
     top: 300px;
     width: 100%;
-    
 }
 
 .info {
