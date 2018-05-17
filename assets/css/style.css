@@ -25,6 +25,7 @@ footer {
     background-image: linear-gradient(-225deg, #7085B6 0%, #87A7D9 50%, #DEF3F8 100%) !important;
     color: #f09819 !important;
 }
+
 #logo
 {
       width: 300px;
@@ -32,20 +33,25 @@ footer {
       float: left;
       position: relative;
       
-
 }
 
-.brand-logo {
+/* .brand-logo {
     margin: 0 auto;
     float: left;
     font-size: 30px;
     position: relative;
-    top: 42px;
-}
+    top: 30px;
+} */
 
 .btn {
     background-color: #f09819;
 }
+
+.btn:focus{ 
+    background-color: #82b1ff !important ;
+  }
+
+
 .section {
     margin: 0 auto;
 }
@@ -59,7 +65,7 @@ footer {
   
 }
 
-#foodPage, #activitiesPage{
+#foodPage, #activitiesPage, #restaurantFinder, #recipeFinder{
     background: rgba(169, 177, 184, 0.714); 
     position: absolute;
     top: 300px;

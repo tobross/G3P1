@@ -138,7 +138,8 @@
                 { src:"assets/images/lake.jpg"},
                 { src:"assets/images/nights.jpg"},
                 { src:"assets/images/cota.jpg"}
-                ]
+                ],
+                transition: [ 'fade', 'zoomOut', 'blur' ]
         });
 
 
